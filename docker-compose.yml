@@ -35,6 +35,7 @@ services:
     ## https://docs.photoprism.app/getting-started/troubleshooting/#fatal-server-errors
     # restart: unless-stopped
     stop_grace_period: 10s
+    container_name: fotobox-app
     depends_on:
       - database
     security_opt:
@@ -94,6 +95,7 @@ services:
     ## If MariaDB gets stuck in a restart loop, this points to a memory or filesystem issue:
     ## https://docs.photoprism.app/getting-started/troubleshooting/#fatal-server-errors
     restart: unless-stopped
+    container_name: fotobox-database
     networks:
       - fotobox-local-net
     stop_grace_period: 5s
